@@ -15,6 +15,9 @@ client.on('message',message=>{
     if(matchResult){
       const DiceNum=matchResult[1];
       const DiceMax=matchResult[2];
+      if(matchResult[1]==0 || matchResult[2]==0){
+        return;
+      }
       console.log(`${DiceNum}d${DiceMax}`);
       let txt=msg;
       for(let i=0;i<DiceNum;i++){
